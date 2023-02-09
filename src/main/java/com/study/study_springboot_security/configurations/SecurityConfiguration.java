@@ -8,7 +8,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfiguration {
 
-  @Bean
+  // @Bean
   public SecurityFilterChain filterChain(HttpSecurity httpSecurity)
     throws Exception {
     // 권한에 대한 부분 : url & roles : user url & roles
@@ -22,13 +22,14 @@ public class SecurityConfiguration {
       .anyRequest()
       .permitAll(); // 설정한 url외 모두 접근 가능
 
-    // 로그인에 대한 부분
+    // 로그인
     httpSecurity
       .formLogin()
       .loginPage("/loginFrom")
-      .loginProcessingUrl("/loginFrom")
+      .loginProcessingUrl("/login")
       .defaultSuccessUrl("/");
 
     return httpSecurity.build();
+    // 로그아웃
   }
 }
