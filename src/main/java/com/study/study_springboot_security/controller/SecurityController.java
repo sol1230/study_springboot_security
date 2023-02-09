@@ -7,15 +7,15 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SecurityController {
 
-  @GetMapping({ "/loginFrom" }) // 로그인 폼 작성
-  public ModelAndView loginFrom(ModelAndView modelAndView) {
+  @GetMapping({ "/loginForm" }) // 로그인 폼 작성
+  public ModelAndView loginForm(ModelAndView modelAndView) {
     String viewName = "/WEB-INF/views/security/loginForm.jsp";
     modelAndView.setViewName(viewName);
     return modelAndView;
   }
 
-  @GetMapping({ "/logoutFrom" }) // 로그아웃 폼 작성
-  public ModelAndView logoutFrom(ModelAndView modelAndView) {
+  @GetMapping({ "/logoutForm" }) // 로그아웃 폼 작성
+  public ModelAndView logoutForm(ModelAndView modelAndView) {
     String viewName = "/WEB-INF/views/security/logoutForm.jsp";
     modelAndView.setViewName(viewName);
     return modelAndView;

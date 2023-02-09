@@ -16,10 +16,11 @@ public class MainController {
       .getAuthentication()
       .getPrincipal();
 
+    String username = null;
     if (principal instanceof UserDetails) {
-      String username = ((UserDetails) principal).getUsername();
+      username = ((UserDetails) principal).getUsername(); // 로그인 상태에서 확인 가능
     } else {
-      String username = principal.toString();
+      username = principal.toString(); // 로그아웃 상태에서 확인 가능
     }
 
     String viewName = "/WEB-INF/views/main.jsp";
